@@ -1,104 +1,92 @@
-Create table Productos(
-	idProducto Integer Primary Key,
-	nombreProducto varchar(255),
-	descripcionProducto varchar(255),
-	precioProducto Integer,
-	stockProducto Integer
-	
+CREATE TABLE Productos(
+    IdProducto SERIAL PRIMARY KEY,
+    NombreProducto VARCHAR(255),
+    DescripcionProducto VARCHAR(400),
+    PrecioProducto NUMERIC,
+    StockProducto INTEGER
 );
 
-
-
-Create table Venta(
-	idVenta Integer Primary Key,
-	fechaVenta Date,
-	montoVenta Integer
+CREATE TABLE TipoDocumento(
+    IdTipoDocumento SERIAL PRIMARY KEY,
+    NombreDocumento VARCHAR(255),
+    TipoDocumento VARCHAR(255)
 );
 
-
-
-Create table Tienda(
-	idTienda Integer Primary Key,
-	nombreTienda varchar(255),
-	direccionTienda varchar(255),
-        comunaTienda varchar(255),
-        Foreign Key (comunaTienda) References Comuna(idComuna),
+CREATE TABLE Venta(
+    IdVenta SERIAL PRIMARY KEY,
+    FechaVenta DATE,
+    MontoVenta NUMERIC,
+    IdTipoDocumento INTEGER,
+    FOREIGN KEY (IdTipoDocumento) REFERENCES TipoDocumento(IdTipoDocumento)
 );
 
-
-
-Create Table TipoDocumento(
-	idTipoDocumento Integer Primary Key,
-	nombreDocumento varchar(255)
+CREATE TABLE Comuna (
+    IdComuna SERIAL PRIMARY KEY,
+    NombreComuna VARCHAR(255),
+    ProvinciaComuna VARCHAR(255),
+    RegionComuna VARCHAR(255)
 );
 
-
-
-Create Table Vendedor (
-	idVendedor Integer Primary Key,
-	comisionVendedor Integer,
-	horasExtras Integer
+CREATE TABLE Tienda(
+    IdTienda SERIAL PRIMARY KEY,
+    NombreTienda VARCHAR(255),
+    DireccionTienda VARCHAR(255),
+    IdComuna INTEGER,
+    FOREIGN KEY (IdComuna) REFERENCES Comuna(IdComuna)
 );
 
-
-
-Create Table Comuna (
-	idComuna Integer Primary Key,
-	nombreComuna varchar(255),
-	prvinciaComuna varchar(255),
-	regionComuna varchar(255)
+CREATE TABLE Empleado(
+    IdEmpleado SERIAL PRIMARY KEY,
+    NombreEmpleado VARCHAR(255),
+    ApellidoPatEmpleado VARCHAR(255),
+    ApellidoMatEmpleado VARCHAR(255),
+    TelefonoEmpleado VARCHAR(255),
+    CorreoEmpleado VARCHAR(255),
+    FechaInicioContrato DATE,
+    FechaTerminoContrato DATE,
+    IdComuna INTEGER,
+    FOREIGN KEY (IdComuna) REFERENCES Comuna(IdComuna),
+    IdTienda INTEGER,
+    FOREIGN KEY (IdTienda) REFERENCES Tienda(IdTienda)
 );
 
-
-
-Create Table Sueldo (
-	idSueldo Integer Primary Key,
-	montoSueldo Integer,
-	fechaPago Date
+CREATE TABLE Sueldo (
+    IdSueldo SERIAL PRIMARY KEY,
+    MontoSueldo INTEGER,
+    FechaPago DATE,
+    IdEmpleado INTEGER,
+    FOREIGN KEY (IdEmpleado) REFERENCES Empleado(IdEmpleado)
 );
 
-
-
-Create Table Empleado(
-	idEmpleado Integer Primary key,
-	nombreEmpleado varchar(255),
-	apellidoEmpleado varchar(255),
-	telefonoEmpleado varchar(255),
-	correoEmpleado varchar(255),
-	fechaContrato Date
-        comunaEmpleado varchar(255),
-        Foreign Key (comunaEmpleado) References Comuna(idComuna),
-
+CREATE TABLE Vendedor (
+    IdVendedor SERIAL PRIMARY KEY,
+    ComisionVendedor INTEGER,
+    HorasExtras INTEGER,
+    IdEmpleado INTEGER,
+    FOREIGN KEY (IdEmpleado) REFERENCES Empleado(IdEmpleado)
 );
 
-
-Create Table Producto_Venta (
-	idProductoVenta Integer Primary Key,
-	idProd Integer,
-	idVent Integer,
-	cantidadVendida integer,
-	Foreign Key (idProd) References Productos(idProducto),
-	Foreign Key (idVent) References Venta(idVenta)
-	
+CREATE TABLE Producto_Venta (
+    IdProductoVenta SERIAL PRIMARY KEY,
+    IdProducto INTEGER,
+    FOREIGN KEY (IdProducto) REFERENCES Productos(IdProducto),
+    IdVenta INTEGER,
+    FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta),
+	CantidadVendida INTEGER
 );
 
-
-
-Create Table Venta_Vendedor (
-	idVentaVendedor Integer Primary Key,
-	idVend Integer,
-	idEmpl Integer,
-	Foreign Key (idVend) References Vendedor(idVendedor),
-	Foreign Key (idEmpl) References Empleado(idEmpleado)
+CREATE TABLE Venta_Vendedor (
+    IdVentaVendedor SERIAL PRIMARY KEY,
+    IdVendedor INTEGER,
+    FOREIGN KEY (IdVendedor) REFERENCES Vendedor(IdVendedor),
+    IdVenta INTEGER,
+    FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta)
 );
 
-
-
-
-Create Table Tienda_Empleado(
-	idTiendaEmpleado Integer Primary Key,
-	idEmplTienda Integer,
-	idTiendaEmpl Integer,
-	Foreign Key (idEmplTienda) References Empleado(idEmpleado),
-	Foreign Key (idTiendaEmpl) References Tienda(idTienda)
+CREATE TABLE Tienda_Vendedor(
+    IdTiendaVendedor SERIAL PRIMARY KEY,
+    IdVendedor INTEGER,
+    FOREIGN KEY (IdVendedor) REFERENCES Vendedor(IdVendedor),
+    IdTienda INTEGER,
+    FOREIGN KEY (IdTienda) REFERENCES Tienda(IdTienda)
 );
