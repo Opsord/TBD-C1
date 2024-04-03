@@ -83,10 +83,10 @@ CREATE TABLE Venta_Vendedor (
     FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta)
 );
 
-CREATE TABLE Tienda_Vendedor(
-    IdTiendaVendedor SERIAL PRIMARY KEY,
-    IdVendedor INTEGER,
-    FOREIGN KEY (IdVendedor) REFERENCES Vendedor(IdVendedor),
+CREATE TABLE Tienda_Empleado(
+    IdTiendaEmpleado SERIAL PRIMARY KEY,
+    IdEmpleado INTEGER,
+    FOREIGN KEY (IdEmpleado) REFERENCES Empleado(IdEmpleado),
     IdTienda INTEGER,
     FOREIGN KEY (IdTienda) REFERENCES Tienda(IdTienda)
 );
