@@ -38,6 +38,7 @@ CREATE TABLE Tienda(
 
 CREATE TABLE Empleado(
     IdEmpleado SERIAL PRIMARY KEY,
+    RutEmpleado VARCHAR(12),
     NombreEmpleado VARCHAR(255),
     ApellidoPatEmpleado VARCHAR(255),
     ApellidoMatEmpleado VARCHAR(255),
