@@ -9,7 +9,8 @@ CREATE TABLE Productos(
 CREATE TABLE TipoDocumento(
     IdTipoDocumento SERIAL PRIMARY KEY,
     NombreDocumento VARCHAR(255),
-    TipoDocumento VARCHAR(255)
+    RutDocumento VARCHAR(255),
+    TipoDocumento INTEGER
 );
 
 CREATE TABLE Venta(
@@ -44,6 +45,7 @@ CREATE TABLE Empleado(
     CorreoEmpleado VARCHAR(255),
     FechaInicioContrato DATE,
     FechaTerminoContrato DATE,
+    HorasExtras NUMERIC,
     IdComuna INTEGER,
     FOREIGN KEY (IdComuna) REFERENCES Comuna(IdComuna),
     IdTienda INTEGER,
@@ -52,7 +54,7 @@ CREATE TABLE Empleado(
 
 CREATE TABLE Sueldo (
     IdSueldo SERIAL PRIMARY KEY,
-    MontoSueldo INTEGER,
+    MontoSueldo NUMERIC,
     FechaPago DATE,
     IdEmpleado INTEGER,
     FOREIGN KEY (IdEmpleado) REFERENCES Empleado(IdEmpleado)
@@ -60,8 +62,7 @@ CREATE TABLE Sueldo (
 
 CREATE TABLE Vendedor (
     IdVendedor SERIAL PRIMARY KEY,
-    ComisionVendedor INTEGER,
-    HorasExtras INTEGER,
+    ComisionVendedor NUMERIC,
     IdEmpleado INTEGER,
     FOREIGN KEY (IdEmpleado) REFERENCES Empleado(IdEmpleado)
 );
@@ -77,16 +78,16 @@ CREATE TABLE Producto_Venta (
 
 CREATE TABLE Venta_Vendedor (
     IdVentaVendedor SERIAL PRIMARY KEY,
-    IdVendedor INTEGER,
-    FOREIGN KEY (IdVendedor) REFERENCES Vendedor(IdVendedor),
     IdVenta INTEGER,
-    FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta)
+    FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta),
+    IdVendedor INTEGER,
+    FOREIGN KEY (IdVendedor) REFERENCES Vendedor(IdVendedor) 
 );
 
 CREATE TABLE Tienda_Empleado(
     IdTiendaEmpleado SERIAL PRIMARY KEY,
-    IdEmpleado INTEGER,
-    FOREIGN KEY (IdEmpleado) REFERENCES Empleado(IdEmpleado),
     IdTienda INTEGER,
-    FOREIGN KEY (IdTienda) REFERENCES Tienda(IdTienda)
+    FOREIGN KEY (IdTienda) REFERENCES Tienda(IdTienda),
+    IdEmpleado INTEGER,
+    FOREIGN KEY (IdEmpleado) REFERENCES Empleado(IdEmpleado)
 );
