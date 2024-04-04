@@ -1,0 +1,3 @@
+--Insercion en tabla
+INSERT INTO Productos (ID_PROD, nombre, valor) VALUES
+	(1, 'Cafe', 'Tarro de cafe de 500 gramos', 3000, 100);
