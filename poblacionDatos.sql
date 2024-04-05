@@ -126,8 +126,7 @@ VALUES
 	(13, '2019-11-04', 310000, 3);
 
 INSERT INTO
-	Comuna (
-    	IdComuna,NombreComuna,ProvinciaComuna,RegionComuna)
+	Comuna (IdComuna,NombreComuna,ProvinciaComuna,RegionComuna)
 VALUES
 	(1, 'Santiago', 'Santiago', 'Metropolitana'),
 	(2, 'Providencia', 'Santiago', 'Metropolitana'),
@@ -151,49 +150,15 @@ VALUES
 	(20, 'Valdivia', 'Valdivia', 'Los Ríos');
 
 INSERT INTO
-	Tienda (idTienda,NombreTienda,DireccionTienda,
-    	IdComuna
-	)
+	Tienda (idTienda,NombreTienda,DireccionTienda,IdComuna)
 VALUES
 	(1, 'Tienda Central', 'Av. Libertador Bernardo O Higgins 123 ', 1),
-(2, ' Tienda Providencia ', ' Av.Providencia 456 ', 2),
-(3, ' Tienda Las Condes ', ' Av.Las Condes 789 ', 3),
-(4, ' Tienda Ñuñoa ', ' Av.Irarrázaval 1011 ', 4),
-(5, ' Tienda La Reina ', ' Av.Larraín 1213 ', 5),
-(6, ' Tienda Maipú ', ' Av.Pajaritos 1415 ', 6),
-(7, ' Tienda Puente Alto ', ' Av.Concha y Toro 1617 ', 7),
-(8, ' Tienda San Bernardo ', ' Av.Bernardo O Higgins 1819',
-    	8
-	),
-	(
-    	9,
-    	'Tienda La Florida',
-    	'Av. Vicuña Mackenna 2021',
-    	9
-	),
-	(10, 'Tienda Peñalolén', 'Av. Tobalaba 2223', 10),
-	(
-    	11,
-    	'Tienda Rancagua',
-    	'Av. Independencia 2425',
-    	11
-	),
-	(
-    	12,
-    	'Tienda San Fernando',
-    	'Av. Manso de Velasco 2627',
-    	12
-	),
-	(13, 'Tienda Talca', 'Av. 5 de Abril 2829', 13),
-	(14, 'Tienda Curicó', 'Av. Freire 3031', 14),
-	(15,'Tienda Linares','Av. Valentín Letelier 3233',15),
-	(16,'Tienda Concepción','Av. Pedro de Valdivia 3435',
-    	2
-	),
-	(17, 'Tienda Talcahuano', 'Av. Colón 3637', 17),
-	(18,'Tienda Chillán', 'Av. O Higgins 3839 ', 18),  
-	(19, ' Tienda Los Ángeles ', ' Av.Alemania 4041 ', 19),
-	(20, ' Tienda Valdivia ', ' Av.Picarte 4243 ', 20);  
+	(2, ' Tienda Providencia ', ' Av.Providencia 456 ', 2),
+	(3, ' Tienda Las Condes ', ' Av.Las Condes 789 ', 3),
+	(4, ' Tienda Ñuñoa ', ' Av.Irarrázaval 1011 ', 4),
+	(5, ' Tienda La Reina ', ' Av.Larraín 1213 ', 5),
+	(6, ' Tienda Maipú ', ' Av.Pajaritos 1415 ', 6),
+	(7, ' Tienda Puente Alto ', ' Av.Concha y Toro 1617 ', 7),
 
 INSERT INTO Empleado (IdEmpleado, RutEmpleado, NombreEmpleado, ApellidoPatEmpleado, ApellidoMatEmpleado, TelefonoEmpleado, CorreoEmpleado, FechaInicioContrato, FechaTerminoContrato, HorasExtras, IdComuna, IdTienda) 
 VALUES 
