@@ -716,7 +716,7 @@ VALUES
 	(1, '2024-03-01', 149600, 1),
 	(2, '2023-05-12', 91400, 2),
 	(9, '2023-03-09', 40000, 9),
-	(13, '2019-11-04', 310000, 3),
+	(13, '2019-11-04', 310000, 3);
 
 INSERT INTO
 	Comuna (
@@ -755,17 +755,14 @@ INSERT INTO
     	IdComuna
 	)
 VALUES
-	(
-    	1,
-    	'Tienda Central',
-    	'Av. Libertador Bernardo O' Higgins 123 ', 1),
+	(1, 'Tienda Central', 'Av. Libertador Bernardo O Higgins 123 ', 1),
 (2, ' Tienda Providencia ', ' Av.Providencia 456 ', 2),
 (3, ' Tienda Las Condes ', ' Av.Las Condes 789 ', 3),
 (4, ' Tienda Ñuñoa ', ' Av.Irarrázaval 1011 ', 4),
 (5, ' Tienda La Reina ', ' Av.Larraín 1213 ', 5),
 (6, ' Tienda Maipú ', ' Av.Pajaritos 1415 ', 6),
 (7, ' Tienda Puente Alto ', ' Av.Concha y Toro 1617 ', 7),
-(8, ' Tienda San Bernardo ', ' Av.Bernardo O 'Higgins 1819',
+(8, ' Tienda San Bernardo ', ' Av.Bernardo O Higgins 1819',
     	8
 	),
 	(
@@ -789,82 +786,68 @@ VALUES
 	),
 	(13, 'Tienda Talca', 'Av. 5 de Abril 2829', 13),
 	(14, 'Tienda Curicó', 'Av. Freire 3031', 14),
-	(
-    	15,
-    	'Tienda Linares',
-    	'Av. Valentín Letelier 3233',
-    	15
-	),
-	(
-    	16,
-    	'Tienda Concepción',
-    	'Av. Pedro de Valdivia 3435',
+	(15,'Tienda Linares','Av. Valentín Letelier 3233',15),
+	(16,'Tienda Concepción','Av. Pedro de Valdivia 3435',
     	2
 	),
 	(17, 'Tienda Talcahuano', 'Av. Colón 3637', 17),
-	(
-    	18,
-    	'Tienda Chillán',
-    	'Av. O' Higgins 3839 ', 18),  
-(19, ' Tienda Los Ángeles ', ' Av.Alemania 4041 ', 19),
-(20, ' Tienda Valdivia ', ' Av.Picarte 4243 ', 20);  
+	(18,'Tienda Chillán', 'Av. O Higgins 3839 ', 18),  
+	(19, ' Tienda Los Ángeles ', ' Av.Alemania 4041 ', 19),
+	(20, ' Tienda Valdivia ', ' Av.Picarte 4243 ', 20);  
 
-INSERT INTO Empleado (IdEmpleado, RutEmpleado, NombreEmpleado, ApellidoPatEmpleado, ApellidoMatEmpleado, TelefonoEmpleado, CorreoEmpleado, FechaInicioContrato, FechaTerminoContrato, HorasExtras, IdComuna, IdTienda)
-VALUES
-(1, ' 11222333 -4 ', ' Juan ', ' Pérez ', ' González ', ' + 56912345678 ', ' juan.perez @example.com ', ' 2023 -01 -01 ', ' 2024 -01 -01 ', 10, 1, 1),
-(2, ' 44555666 -7 ', ' María ', ' García ', ' López ', ' + 56923456789 ', ' maria.garcia @example.com ', ' 2023 -02 -01 ', ' 2024 -02 -01 ', 8, 2, 2),
-(3, ' 77888999 -0 ', ' Pedro ', ' Martínez ', ' Rodríguez ', ' + 56934567890 ',
-' pedro.martinez @example.com ', ' 2023 -03 -01 ', ' 2024 -03 -01 ', 6, 3, 3),
-(4, ' 11222333 -4 ', ' Ana ', ' Hernández ', ' Martínez ', ' + 56945678901 ',
-' ana.hernandez @example.com ', ' 2023 -04 -01 ', ' 2024 -04 -01 ', 9, 4, 4),
-(5, ' 44555666 -7 ', ' Carlos ', ' López ', ' Gómez ', ' + 56956789012 ',
-' carlos.lopez @example.com ', ' 2023 -05 -01 ', ' 2024 -05 -01 ', 7, 5, 5),
-(6, ' 77888999 -0 ', ' Laura ', ' Díaz ', ' Pérez ', ' + 56967890123 ', ' laura.diaz @example.com ',
-' 2023 -06 -01 ', ' 2024 -06 -01 ', 5, 6, 6),
-(7, ' 11222333 -4 ', ' Javier ', ' Gómez ', ' Hernández ', ' + 56978901234 ', ' javier.gomez @example.com ', ' 2023 -07 -01 ', ' 2024 -07 -01 ', 8, 7, 7),
-(8, ' 44555666 -7 ', ' Sofía ', ' Pérez ', ' Díaz ', ' + 56989012345 ', ' sofia.perez @example.com ', ' 2023 -08 -01 ', ' 2024 -08 -01 ', 10, 8, 8),
-(9, ' 77888999 -0 ', ' Diego ', ' Fernández ', ' García ', ' + 56990123456 ', ' diego.fernandez @example.com ', ' 2023 -09 -01 ', ' 2024 -09 -01 ', 6, 9, 9),
-(10, ' 11222333 -4 ', ' Valentina ', ' Ruiz ', ' López ', ' + 56901234567 ', ' valentina.ruiz @example.com ', ' 2023 -10 -01 ', ' 2024 -10 -01 ', 7, 10, 10),
-(11, ' 23456789 -0 ', ' Roberto ', ' Sánchez ', ' González ', ' + 56912340987 ', ' roberto.sanchez @example.com ', ' 2023 -11 -01 ', ' 2024 -11 -01 ', 8, 1, 1),
-(12, ' 45678901 -2 ', ' Paula ', ' Torres ', ' Rodríguez ', ' + 56923409876 ', ' paula.torres @example.com ', ' 2023 -12 -01 ', ' 2024 -12 -01 ', 7, 2, 2),
-(13, ' 67890123 -4 ', ' Luis ', ' Vargas ', ' López ', ' + 56934598765 ', ' luis.vargas @example.com ', ' 2024 -01 -01 ', ' 2025 -01 -01 ', 6, 3, 3),
-(14, ' 89012345 -6 ', ' Carmen ', ' Gómez ', ' Martínez ', ' + 56945687654 ', ' carmen.gomez @example.com ', ' 2024 -02 -01 ', ' 2025 -02 -01 ', 9, 4, 4),
-(15, ' 01234567 -8 ', ' Mario ', ' Hernández ', ' García ', ' + 56956776543 ', ' mario.hernandez @example.com ', ' 2024 -03 -01 ', ' 2025 -03 -01 ', 5, 5, 5),
-(16, ' 23456789 -0 ', ' Fernanda ', ' López ', ' Díaz ', ' + 56967865432 ', ' fernanda.lopez @example.com ', ' 2024 -04 -01 ', ' 2025 -04 -01 ', 8, 6, 6),
-(17, ' 45678901 -2 ', ' José ', ' Martínez ', ' Pérez ', ' + 56978954321 ', ' jose.martinez @example.com ', ' 2024 -05 -01 ', ' 2025 -05 -01 ', 10, 7, 7),
-(18, ' 67890123 -4 ', ' Carolina ', ' García ', ' Hernández ', ' + 56989043210 ', ' carolina.garcia @example.com ', ' 2024 -06 -01 ', ' 2025 -06 -01 ', 6, 8, 8),
-(19, ' 89012345 -6 ', ' Andrés ', ' Pérez ', ' López ', ' + 56990132109 ', ' andres.perez @example.com ', ' 2024 -07 -01 ', ' 2025 -07 -01 ', 7, 9, 9),
-(20, ' 01234567 -8 ', ' Camila ', ' Díaz ', ' Martínez ', ' + 56901231098 ', ' camila.diaz @example.com ', ' 2024 -08 -01 ', ' 2025 -08 -01 ', 9, 10, 10),
-(21, ' 12345678 -9 ', ' Ana ', ' López ', ' Fernández ', ' + 56945678901 ', ' ana.lopez @example.com ', ' 2023 -04 -01 ', ' 2024 -04 -01 ', 5, 4, 4),
-(22, ' 23456789 -0 ', ' Carlos ', ' Sánchez ', ' Gómez ', ' + 56956789012 ', ' carlos.sanchez @example.com ', ' 2023 -05 -01 ', ' 2024 -05 -01 ', 7, 5, 5),
-(23, ' 34567890 -1 ', ' Luisa ', ' Hernández ', ' Díaz ', ' + 56967890123 ', ' luisa.hernandez @example.com ', ' 2023 -06 -01 ', ' 2024 -06 -01 ', 9, 6, 6),
-(24, ' 45678901 -2 ', ' Javier ', ' Martín ', ' López ', ' + 56978901234 ', ' javier.martin @example.com ', ' 2023 -07 -01 ', ' 2024 -07 -01 ', 8, 7, 7),
-(25, ' 56789012 -3 ', ' Laura ', ' Gómez ', ' Muñoz ', ' + 56989012345 ', ' laura.gomez @example.com ', ' 2023 -08 -01 ', ' 2024 -08 -01 ', 6, 8, 8),
-(26, ' 67890123 -4 ', ' Pablo ', ' Díaz ', ' García ', ' + 56990123456 ', ' pablo.diaz @example.com ', ' 2023 -09 -01 ', ' 2024 -09 -01 ', 4, 9, 9),
-(27, ' 78901234 -5 ', ' Lucía ', ' López ', ' Hernández ', ' + 56901234567 ', ' lucia.lopez @example.com ', ' 2023 -10 -01 ', ' 2024 -10 -01 ', 7, 10, 10),
-(28, ' 89012345 -6 ', ' Diego ', ' Muñoz ', ' Martínez ', ' + 56912345678 ', ' diego.munoz @example.com ', ' 2023 -11 -01 ', ' 2024 -11 -01 ', 5, 11, 11),
-(29, ' 90123456 -7 ', ' Sofía ', ' García ', ' Pérez ', ' + 56923456789 ', ' sofia.garcia @example.com ', ' 2023 -12 -01 ', ' 2024 -12 -01 ', 6, 12, 12),
-(30, ' 01234567 -8 ', ' Miguel ', ' Hernández ', ' Sánchez ', ' + 56934567890 ', ' miguel.hernandez @example.com ', ' 2024 -01 -01 ', ' 2025 -01 -01 ', 8, 13, 13),
-(31, ' 12345678 -9 ', ' Elena ', ' Martínez ', ' Gómez ', ' + 56945678901 ', ' elena.martinez @example.com ', ' 2024 -02 -01 ', ' 2025 -02 -01 ', 9, 14, 14),
-(32, ' 23456789 -0 ', ' Adrián ', ' Gómez ', ' Hernández ', ' + 56956789012 ', ' adrian.gomez @example.com ', ' 2024 -03 -01 ', ' 2025 -03 -01 ', 7, 15, 15),
-(33, ' 34567890 -1 ', ' Carmen ', ' Sánchez ', ' López ', ' + 56967890123 ', ' carmen.sanchez @example.com ', ' 2024 -04 -01 ', ' 2025 -04 -01 ', 6, 16, 16),
-(34, ' 45678901 -2 ', ' Jorge ', ' López ', ' Muñoz ', ' + 56978901234 ', ' jorge.lopez @example.com ', ' 2024 -05 -01 ', ' 2025 -05 -01 ', 5, 17, 17),
-(35, ' 56789012 -3 ', ' Isabel ', ' Muñoz ', ' Martínez ', ' + 56989012345 ', ' isabel.munoz @example.com ', ' 2024 -06 -01 ', ' 2025 -06 -01 ', 4, 18, 18),
-(36, ' 67890123 -4 ', ' Daniel ', ' Martínez ', ' Sánchez ', ' + 56990123456 ', ' daniel.martinez @example.com ', ' 2024 -07 -01 ', ' 2025 -07 -01 ', 8, 19, 19),
-(37, ' 78901234 -5 ', ' Natalia ', ' Sánchez ', ' Gómez ', ' + 56901234567 ', ' natalia.sanchez @example.com ', ' 2024 -08 -01 ', ' 2025 -08 -01 ', 7, 20, 20),
-(38, ' 89012345 -6 ', ' Joaquín ', ' Gómez ', ' Hernández ', ' + 56912345678 ', ' joaquin.gomez @example.com ', ' 2024 -09 -01 ', ' 2025 -09 -01 ', 6, 21, 21),
-(39, ' 90123456 -7 ', ' Valeria ', ' Hernández ', ' López ', ' + 56923456789 ', ' valeria.hernandez @example.com ', ' 2024 -10 -01 ', ' 2025 -10 -01 ', 5, 22, 22),
-(40, ' 01234567 -8 ', ' Andrés ', ' López ', ' Martínez ', ' + 56934567890 ', ' andres.lopez @example.com ', ' 2024 -11 -01 ', ' 2025 -11 -01 ', 9, 23, 23),
-(41, ' 12345678 -9 ', ' Lucas ', ' Martínez ', ' Muñoz ', ' + 56945678901 ', ' lucas.martinez @example.com ', ' 2024 -12 -01 ', ' 2025 -12 -01 ', 7, 24, 24),
-(42, ' 23456789 -0 ', ' Sara ', ' Muñoz ', ' Sánchez ', ' + 56956789012 ', ' sara.munoz @example.com ', ' 2025 -01 -01 ', ' 2026 -01 -01 ', 6, 25, 25),
-(43, ' 34567890 -1 ', ' Gabriel ', ' Sánchez ', ' Gómez ', ' + 56967890123 ', ' gabriel.sanchez @example.com ', ' 2025 -02 -01 ', ' 2026 -02 -01 ', 8, 26, 26),
-(44, ' 45678901 -2 ', ' Paula ', ' Gómez ', ' Hernández ', ' + 56978901234 ', ' paula.gomez @example.com ', ' 2025 -03 -01 ', ' 2026 -03 -01 ', 5, 27, 27),
-(45, ' 56789012 -3 ', ' Mateo ', ' Hernández ', ' López ', ' + 56989012345 ', ' mateo.hernandez @example.com ', ' 2025 -04 -01 ', ' 2026 -04 -01 ', 9, 28, 28),
-(46, ' 67890123 -4 ', ' Emma ', ' López ', ' Martínez ', ' + 56990123456 ', ' emma.lopez @example.com ', ' 2025 -05 -01 ', ' 2026 -05 -01 ', 7, 29, 29),
-(47, ' 78901234 -5 ', ' Mario ', ' Martínez ', ' Muñoz ', ' + 56901234567 ', ' mario.martinez @example.com ', ' 2025 -06 -01 ', ' 2026 -06 -01 ', 6, 30, 30),
-(48, ' 89012345 -6 ', ' Carla ', ' Muñoz ', ' Sánchez ', ' + 56912345678 ', ' carla.munoz @example.com ', ' 2025 -07 -01 ', ' 2026 -07 -01 ', 8, 31, 31),
-(49, ' 90123456 -7 ', ' Alejandro ', ' Sánchez ', ' Gómez ', ' + 56923456789 ', ' alejandro.sanchez @example.com ', ' 2025 -08 -01 ', ' 2026 -08 -01 ', 5, 32, 32),
-(50, ' 01234567 -8 ', ' Marta ', ' Gómez ', ' Hernández ', ' + 56934567890 ', ' marta.gomez @example.com ', ' 2025 -09 -01 ', ' 2026 -09 -01 ', 7, 33, 33);
+INSERT INTO Empleado (IdEmpleado, RutEmpleado, NombreEmpleado, ApellidoPatEmpleado, ApellidoMatEmpleado, TelefonoEmpleado, CorreoEmpleado, FechaInicioContrato, FechaTerminoContrato, HorasExtras, IdComuna, IdTienda) 
+VALUES 
+(1, '11222333-4', 'Juan', 'Pérez', 'González', '+56912345678', 'juan.perez@example.com', '2023/01/01', '2024/01/01', 10, 1, 1), 
+(2, '44555666-7', 'María', 'García', 'López', '+56923456789', 'maria.garcia@example.com', '2023/02/01', '2024/02/01', 8, 2, 2), 
+(3, '77888999-0', 'Pedro', 'Martínez', 'Rodríguez', '+56934567890', 'pedro.martinez@example.com', '2023/03/01', '2024/03/01', 6, 3, 3), 
+(4, '11222333-4', 'Ana', 'Hernández', 'Martínez', '+56945678901', 'ana.hernandez@example.com', '2023/04/01', '2024/04/01', 9, 4, 4), 
+(5, '44555666-7', 'Carlos', 'López', 'Gómez', '+56956789012', 'carlos.lopez@example.com', '2023/05/01', '2024/05/01', 7, 5, 5), 
+(6, '77888999-0', 'Laura', 'Díaz', 'Pérez', '+56967890123', 'laura.diaz@example.com', '2023/06/01', '2024/06/01', 5, 6, 6), 
+(7, '11222333-4', 'Javier', 'Gómez', 'Hernández', '+56978901234', 'javier.gomez@example.com', '2023/07/01', '2024/07/01', 8, 7, 7), 
+(8, '44555666-7', 'Sofía', 'Pérez', 'Díaz', '+56989012345', 'sofia.perez@example.com', '2023/08/01', '2024/08/01', 10, 8, 8), 
+(9, '77888999-0', 'Diego', 'Fernández', 'García', '+56990123456', 'diego.fernandez@example.com', '2023/09/01', '2024/09/01', 6, 9, 9), 
+(10, '11222333-4', 'Valentina', 'Ruiz', 'López', '+56901234567', 'valentina.ruiz@example.com', '2023/10/01', '2024/10/01', 7, 10, 10), 
+(11, '23456789-0', 'Roberto', 'Sánchez', 'González', '+56912340987', 'roberto.sanchez@example.com', '2023/11/01', '2024/11/01', 8, 1, 1), 
+(12, '45678901-2', 'Paula', 'Torres', 'Rodríguez', '+56923409876', 'paula.torres@example.com', '2023/12/01', '2024/12/01', 7, 2, 2), 
+(13, '67890123-4', 'Luis', 'Vargas', 'López', '+56934598765', 'luis.vargas@example.com', '2024/01/01', '2025/01/01', 6, 3, 3), 
+(14, '89012345-6', 'Carmen', 'Gómez', 'Martínez', '+56945687654', 'carmen.gomez@example.com', '2024/02/01', '2025/02/01', 9, 4, 4), 
+(15, '01234567-8', 'Mario', 'Hernández', 'García', '+56956776543', 'mario.hernandez@example.com', '2024/03/01', '2025/03/01', 5, 5, 5), 
+(16, '23456789-0', 'Fernanda', 'López', 'Díaz', '+56967865432', 'fernanda.lopez@example.com', '2024/04/01', '2025/04/01', 8, 6, 6), 
+(17, '45678901-2', 'José', 'Martínez', 'Pérez', '+56978954321', 'jose.martinez@example.com', '2024/05/01', '2025/05/01', 10, 7, 7), 
+(18, '67890123-4', 'Carolina', 'García', 'Hernández', '+56989043210', 'carolina.garcia@example.com', '2024/06/01', '2025/06/01', 6, 8, 8), 
+(19, '89012345-6', 'Andrés', 'Pérez', 'López', '+56990132109', 'andres.perez@example.com', '2024/07/01', '2025/07/01', 7, 9, 9), 
+(20, '01234567-8', 'Camila', 'Díaz', 'Martínez', '+56901231098', 'camila.diaz@example.com', '2024/08/01', '2025/08/01', 9, 10, 10), 
+(21, '12345678-9', 'Ana', 'López', 'Fernández', '+56945678901', 'ana.lopez@example.com', '2023/04/01', '2024/04/01', 5, 4, 4), 
+(22, '23456789-0', 'Carlos', 'Sánchez', 'Gómez', '+56956789012', 'carlos.sanchez@example.com', '2023/05/01', '2024/05/01', 7, 5, 5), 
+(23, '34567890-1', 'Luisa', 'Hernández', 'Díaz', '+56967890123', 'luisa.hernandez@example.com', '2023/06/01', '2024/06/01', 9, 6, 6), 
+(24, '45678901-2', 'Javier', 'Martín', 'López', '+56978901234', 'javier.martin@example.com', '2023/07/01', '2024/07/01', 8, 7, 7), 
+(25, '56789012-3', 'Laura', 'Gómez', 'Muñoz', '+56989012345', 'laura.gomez@example.com', '2023/08/01', '2024/08/01', 6, 8, 8), 
+(26, '67890123-4', 'Pablo', 'Díaz', 'García', '+56990123456', 'pablo.diaz@example.com', '2023/09/01', '2024/09/01', 4, 9, 9), 
+(27, '78901234-5', 'Lucía', 'López', 'Hernández', '+56901234567', 'lucia.lopez@example.com', '2023/10/01', '2024/10/01', 7, 10, 10), 
+(28, '89012345-6', 'Diego', 'Muñoz', 'Martínez', '+56912345678', 'diego.munoz@example.com', '2023/11/01', '2024/11/01', 5, 11, 11), 
+(29, '90123456-7', 'Sofía', 'García', 'Pérez', '+56923456789', 'sofia.garcia@example.com', '2023/12/01', '2024/12/01', 6, 12, 12), 
+(30, '01234567-8', 'Miguel', 'Hernández', 'Sánchez', '+56934567890', 'miguel.hernandez@example.com', '2024/01/01', '2025/01/01', 8, 13, 13), 
+(31, '12345678-9', 'Elena', 'Martínez', 'Gómez', '+56945678901', 'elena.martinez@example.com', '2024/02/01', '2025/02/01', 9, 14, 14), 
+(32, '23456789-0', 'Adrián', 'Gómez', 'Hernández', '+56956789012', 'adrian.gomez@example.com', '2024/03/01', '2025/03/01', 7, 15, 15), 
+(33, '34567890-1', 'Carmen', 'Sánchez', 'López', '+56967890123', 'carmen.sanchez@example.com', '2024/04/01', '2025/04/01', 6, 16, 16), 
+(34, '45678901-2', 'Jorge', 'López', 'Muñoz', '+56978901234', 'jorge.lopez@example.com', '2024/05/01', '2025/05/01', 5, 17, 17), 
+(35, '56789012-3', 'Isabel', 'Muñoz', 'Martínez', '+56989012345', 'isabel.munoz@example.com', '2024/06/01', '2025/06/01', 4, 18, 18), 
+(36, '67890123-4', 'Daniel', 'Martínez', 'Sánchez', '+56990123456', 'daniel.martinez@example.com', '2024/07/01', '2025/07/01', 8, 19, 19), 
+(37, '78901234-5', 'Natalia', 'Sánchez', 'Gómez', '+56901234567', 'natalia.sanchez@example.com', '2024/08/01', '2025/08/01', 7, 20, 20), 
+(38, '89012345-6', 'Joaquín', 'Gómez', 'Hernández', '+56912345678', 'joaquin.gomez@example.com', '2024/09/01', '2025/09/01', 6, 21, 21), 
+(39, '90123456-7', 'Valeria', 'Hernández', 'López', '+56923456789', 'valeria.hernandez@example.com', '2024/10/01', '2025/10/01', 5, 22, 22), 
+(40, '01234567-8', 'Andrés', 'López', 'Martínez', '+56934567890', 'andres.lopez@example.com', '2024/11/01', '2025/11/01', 9, 23, 23), 
+(41, '12345678-9', 'Lucas', 'Martínez', 'Muñoz', '+56945678901', 'lucas.martinez@example.com', '2024/12/01', '2025/12/01', 7, 24, 24), 
+(42, '23456789-0', 'Sara', 'Muñoz', 'Sánchez', '+56956789012', 'sara.munoz@example.com', '2025/01/01', '2026/01/01', 6, 25, 25), 
+(43, '34567890-1', 'Gabriel', 'Sánchez', 'Gómez', '+56967890123', 'gabriel.sanchez@example.com', '2025/02/01', '2026/02/01', 8, 26, 26), 
+(44, '45678901-2', 'Paula', 'Gómez', 'Hernández', '+56978901234', 'paula.gomez@example.com', '2025/03/01', '2026/03/01', 5, 27, 27), 
+(45, '56789012-3', 'Mateo', 'Hernández', 'López', '+56989012345', 'mateo.hernandez@example.com', '2025/04/01', '2026/04/01', 9, 28, 28), 
+(46, '67890123-4', 'Emma', 'López', 'Martínez', '+56990123456', 'emma.lopez@example.com', '2025/05/01', '2026/05/01', 7, 29, 29), 
+(47, '78901234-5', 'Mario', 'Martínez', 'Muñoz', '+56901234567', 'mario.martinez@example.com', '2025/06/01', '2026/06/01', 6, 30, 30), 
+(48, '89012345-6', 'Carla', 'Muñoz', 'Sánchez', '+56912345678', 'carla.munoz@example.com', '2025/07/01', '2026/07/01', 8, 31, 31), 
+(49, '90123456-7', 'Alejandro', 'Sánchez', 'Gómez', '+56923456789', 'alejandro.sanchez@example.com', '2025/08/01', '2026/08/01', 5, 32, 32), 
+(50, '01234567-8', 'Marta', 'Gómez', 'Hernández', '+56934567890', 'marta.gomez@example.com', '2025/09/01', '2026/09/01', 7, 33, 33);
+
 
 
 
@@ -945,73 +928,71 @@ INSERT INTO Vendedor (IdVendedor, ComisionVendedor, IdEmpleado) VALUES
 (74, 0.06, 24),
 (75, 0.08, 25);
 
-INSERT INTO  Sueldo(MontoSueldo INTEGER, FechaPago DATE,IdEmpleado INTEGER)
+INSERT INTO  Sueldo(MontoSueldo , FechaPago ,IdEmpleado )
 VALUES
-(713931, ' 2020 -04 -13 ',1)
-(873121, ' 2023 -12 -15 ',3)
-(645434, ' 2021 -04 -24 ',5)
-(7000001, ' 2020 -08 -12 ',2)
-(600000, ' 2023 -01 -23 ',6)
-(630000, ' 2022 -07 -02 ',8)
-(620000, ' 2019 -06 -22 ',8)
-(690000, ' 2022 -10 -05 ',8)
-(680000, ' 2024 -11 -12 ',8)
+(713931, ' 2020 -04 -13 ',1),
+(873121, ' 2023 -12 -15 ',3),
+(645434, ' 2021 -04 -24 ',5),
+(7000001, ' 2020 -08 -12 ',2),
+(600000, ' 2023 -01 -23 ',6),
+(630000, ' 2022 -07 -02 ',8),
+(620000, ' 2019 -06 -22 ',8),
+(690000, ' 2022 -10 -05 ',8),
+(680000, ' 2024 -11 -12 ',8);
 
 
 
 
 
 INSERT INTO Producto_Venta(
-    IdProducto INTEGER,
-    IdVenta INTEGER,
-      CantidadVendida INTEGER)
+    IdProducto ,
+    IdVenta ,
+      CantidadVendida )
 VALUES
-    (10, 1, 20) 
-    (13, 1, 20)
-    (26, 1, 12)
-
-    (14, 2, 2)
-    (17, 2, 15)
-    (24, 2, 17)
-    (13, 2, 10)
-
-    (44,9,20)
-    (96, 13,6)
-    (98,13,12)
-    (90,13,3)
-    (86,13,1)
+    (10, 1, 20), 
+    (13, 1, 20),
+    (26, 1, 12),
+    (14, 2, 2),
+    (17, 2, 15),
+    (24, 2, 17),
+    (13, 2, 10),
+    (44,9,20),
+    (96, 13,6),
+    (98,13,12),
+    (90,13,3),
+    (86,13,1);
 
    
 
 
 INSERT INTO Venta_Vendedor(
-    IdVenta INTEGER,
-    IdVendedor INTEGER)
+    IdVenta,
+    IdVendedor )
 VALUES
-(1,20)
-(3,13)
-(4,20)
-(5,11)
-(6,9)
-(9,6)
-(11,2)
-(3,4)
-(5,2)
-(3,1)
-(6,2)
+(1,20),
+(3,13),
+(4,20),
+(5,11),
+(6,9),
+(9,6),
+(11,2),
+(3,4),
+(5,2),
+(3,1),
+(6,2);
 
 
-INSERT INTO Tienda_Empleado(IdTienda INTEGER, IdEmpleado INTEGER)
+INSERT INTO Tienda_Empleado(IdTienda, IdEmpleado)
 VALUES
 
-(1,20)
-(3,13)
-(4,20)
-(5,11)
-(6,9)
-(9,6)
-(11,2)
-(3,4)
-(5,2)
-(3,1)
-(6,2)
+(1,20),
+(3,13),
+(4,20),
+(5,11),
+(6,9),
+(9,6),
+(11,2),
+(3,4),
+(5,2),
+(3,1),
+(6,2);
