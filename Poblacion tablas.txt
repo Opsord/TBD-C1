@@ -1,3 +1,0 @@
---Insercion en tabla Productos
-INSERT INTO Productos (IdProducto, NombreProducto, DescripcionProducto, PrecioProducto, StockProducto) VALUES
-	(1, 'Cafe', 'Tarro de cafe de 500 gramos', 3000, 100);
