@@ -74,7 +74,7 @@ CREATE TABLE Producto_Venta (
     FOREIGN KEY (IdProducto) REFERENCES Productos(IdProducto),
     IdVenta INTEGER,
     FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta),
-	CantidadVendida INTEGER
+    CantidadVendida INTEGER
 );
 
 CREATE TABLE Venta_Vendedor (
@@ -82,7 +82,7 @@ CREATE TABLE Venta_Vendedor (
     IdVenta INTEGER,
     FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta),
     IdVendedor INTEGER,
-    FOREIGN KEY (IdVendedor) REFERENCES Vendedor(IdVendedor) 
+    FOREIGN KEY (IdVendedor) REFERENCES Vendedor(IdVendedor)
 );
 
 CREATE TABLE Tienda_Empleado(
