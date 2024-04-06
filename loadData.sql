@@ -1,5 +1,5 @@
 INSERT INTO
-    Productos (IdProducto, NombreProducto, DescripcionProducto)
+    Producto (IdProducto, NombreProducto, DescripcionProducto)
 VALUES
     (1, 'Cafe', 'Tarro de cafe de 500 gramos'),
     (

@@ -1,4 +1,4 @@
-CREATE TABLE Productos(
+CREATE TABLE Producto(
     IdProducto SERIAL PRIMARY KEY,
     NombreProducto VARCHAR(255),
     DescripcionProducto VARCHAR(400)
@@ -47,11 +47,11 @@ CREATE TABLE Empleado(
     FechaInicioContrato DATE,
     FechaTerminoContrato DATE,
     HorasExtras NUMERIC,
+    CargoEmpleado VARCHAR(255),
     IdComuna INTEGER,
     FOREIGN KEY (IdComuna) REFERENCES Comuna(IdComuna),
     IdTienda INTEGER,
-    FOREIGN KEY (IdTienda) REFERENCES Tienda(IdTienda),
-    CargoEmpleado VARCHAR(255)
+    FOREIGN KEY (IdTienda) REFERENCES Tienda(IdTienda)
 );
 
 CREATE TABLE Sueldo (
@@ -71,11 +71,11 @@ CREATE TABLE Vendedor (
 
 CREATE TABLE Producto_Venta (
     IdProductoVenta SERIAL PRIMARY KEY,
+    CantidadVendida INTEGER,
     IdProducto INTEGER,
-    FOREIGN KEY (IdProducto) REFERENCES Productos(IdProducto),
+    FOREIGN KEY (IdProducto) REFERENCES Producto(IdProducto),
     IdVenta INTEGER,
-    FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta),
-    CantidadVendida INTEGER
+    FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta)
 );
 
 CREATE TABLE Venta_Vendedor (
@@ -96,10 +96,10 @@ CREATE TABLE Tienda_Empleado(
 
 CREATE TABLE Producto_Tienda(
     IdProductoTienda SERIAL PRIMARY KEY,
+    StockEnTienda INTEGER,
+    PrecioProducto NUMERIC,
     IdTienda INTEGER,
     FOREIGN KEY (IdTienda) REFERENCES Tienda(IdTienda),
     IdProducto INTEGER,
-    FOREIGN KEY (IdProducto) REFERENCES Productos(IdProducto),
-    StockEnTienda INTEGER,
-    PrecioProducto NUMERIC
+    FOREIGN KEY (IdProducto) REFERENCES Producto(IdProducto)
 );
