@@ -24,6 +24,8 @@ WHERE ranking = 1;
 
 -- [03] Ventas por mes, separadas entre Boletas y Facturas.
 
+
+
 -- [04] Empleado que ganó más por tienda en 2020, indicando la comuna donde vive y el cargo que tiene en la empresa.
 
 -- [05] La tienda que tiene menos empleados.
@@ -53,6 +55,7 @@ LIMIT 1;
 -- [08] El vendedor con más productos vendidos por tienda.
 
 -- [09] El empleado con mayor sueldo por mes.
+
 WITH SueldosPorMes AS (
     SELECT EXTRACT(YEAR FROM Sueldo.FechaPago) AS año,
         EXTRACT(MONTH FROM Sueldo.FechaPago) AS mes,
