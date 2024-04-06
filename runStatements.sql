@@ -70,3 +70,18 @@ FROM SueldosPorMes
 WHERE ranking = 1;
 
 -- [10] La tienda con menor recaudación por mes.
+
+WITH RecaudacionPorMeses AS (
+    SELECT t.nombretienda AS nombretienda, EXTRACT(YEAR FROM v.fechaventa) AS ano, EXTRACT(MONTH FROM v.fechaventa) AS mes, SUM(v.montoventa) AS cantidadrecaudada
+    FROM tienda t
+    LEFT JOIN venta v ON t.idtienda = v.idtienda
+    GROUP BY t.nombretienda, ano, mes
+)
+SELECT nombretienda, ano, mes, cantidadrecaudada
+FROM (
+    SELECT nombretienda, ano, mes, cantidadrecaudada, RANK() OVER(PARTITION BY ano, mes ORDER BY cantidadrecaudada) AS ranking
+    FROM RecaudacionPorMeses
+) AS RankingRecaudacionPorMeses
+WHERE ranking = 1;
+
+-- Falta probar esta consulta
