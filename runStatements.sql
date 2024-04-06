@@ -32,6 +32,19 @@ INNER JOIN (
 ON PT.IdTienda = MinPrecios.IdTienda AND PT.PrecioProducto = MinPrecios.PrecioMinimo;
 
 -- [03] Ventas por mes, separadas entre Boletas y Facturas.
+SELECT 
+    EXTRACT(MONTH FROM v.FechaVenta) AS Mes,
+    CASE 
+        WHEN td.TipoDocumento = 1 THEN 'Boleta' 
+        WHEN td.TipoDocumento = 0 THEN 'Factura' 
+    END AS Tipo_Documento,
+    COUNT(v.IdVenta) AS Total_Ventas
+FROM 
+    Venta v
+INNER JOIN 
+    TipoDocumento td ON v.IdTipoDocumento = td.IdTipoDocumento
+GROUP BY 
+    EXTRACT(MONTH FROM v.FechaVenta), td.TipoDocumento;
 
 
 
