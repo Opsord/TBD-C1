@@ -1465,7 +1465,7 @@ VALUES
     (6, 2);
 
 INSERT INTO
-    Producto_Tienda(IdProductoTienda, IdTienda, IdProducto, stock, PrecioProducto)
+    Producto_Tienda(IdProductoTienda, IdTienda, IdProducto, StockEnTienda, PrecioProducto)
 VALUES
     (1, 15, 48, 74, 2000),
     (2, 3, 92, 26, 50000),
