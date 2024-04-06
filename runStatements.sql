@@ -28,6 +28,24 @@ WHERE ranking = 1;
 
 -- [05] La tienda que tiene menos empleados.
 
+--Incluye tiendas sin empleados
+
+SELECT Tienda.NombreTienda, COUNT(Empleado.IdEmpleado) AS TotalEmpleados
+FROM Tienda
+LEFT JOIN Empleado ON Tienda.idTienda = Empleado.IdTienda
+GROUP BY Tienda.idTienda
+ORDER BY TotalEmpleados ASC
+LIMIT 1;
+
+--Solo son tiendas con por lo menos un empleado
+
+SELECT Tienda.NombreTienda, COUNT(Empleado.IdEmpleado) AS TotalEmpleados
+FROM Tienda, Empleado
+WHERE Tienda.idTienda = Empleado.IdTienda
+GROUP BY Tienda.idTienda
+ORDER BY TotalEmpleados ASC
+LIMIT 1;
+
 -- [06] El vendedor con más ventas por mes.
 
 -- [07] El vendedor que ha recaudado más dinero para la tienda por año.
@@ -35,5 +53,17 @@ WHERE ranking = 1;
 -- [08] El vendedor con más productos vendidos por tienda.
 
 -- [09] El empleado con mayor sueldo por mes.
+WITH SueldosPorMes AS (
+    SELECT EXTRACT(YEAR FROM Sueldo.FechaPago) AS año,
+        EXTRACT(MONTH FROM Sueldo.FechaPago) AS mes,
+        Empleado.NombreEmpleado AS nombreempleado, 
+        Sueldo.MontoSueldo,
+        RANK() OVER (PARTITION BY EXTRACT(YEAR FROM Sueldo.FechaPago), EXTRACT(MONTH FROM Sueldo.FechaPago) ORDER BY Sueldo.MontoSueldo DESC) AS ranking
+    FROM Empleado 
+    JOIN Sueldo ON Empleado.IdEmpleado = Sueldo.IdEmpleado
+)
+SELECT año, mes, nombreempleado, MontoSueldo
+FROM SueldosPorMes
+WHERE ranking = 1;
 
 -- [10] La tienda con menor recaudación por mes.
