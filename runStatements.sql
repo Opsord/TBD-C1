@@ -4,7 +4,7 @@ WITH VentasPorMes AS (
     SELECT EXTRACT(MONTH FROM v.fechaventa) AS mes, p.nombreproducto AS nombreproducto, COUNT(*) AS cantidadvendida
     FROM venta v
     JOIN producto_venta pv ON v.idventa = pv.idventa
-    JOIN productos p ON p.idproducto = pv.idproducto
+    JOIN producto p ON p.idproducto = pv.idproducto
     WHERE EXTRACT(YEAR FROM v.fechaventa) = 2021
     GROUP BY mes, p.nombreproducto
 )
@@ -21,6 +21,7 @@ WHERE ranking = 1;
 -- RANK VS ROW_NUMBER: La primera permite asignar el mismo rango a multiples filas
 
 -- [02] Producto más económico por tienda.
+
 SELECT PT.IdTienda, PT.IdProducto, PT.PrecioProducto
 FROM Producto_Tienda PT
 INNER JOIN (
