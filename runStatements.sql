@@ -21,6 +21,14 @@ WHERE ranking = 1;
 -- RANK VS ROW_NUMBER: La primera permite asignar el mismo rango a multiples filas
 
 -- [02] Producto más económico por tienda.
+SELECT PT.IdTienda, PT.IdProducto, PT.PrecioProducto
+FROM Producto_Tienda PT
+INNER JOIN (
+    SELECT IdTienda, MIN(PrecioProducto) AS PrecioMinimo
+    FROM Producto_Tienda
+    GROUP BY IdTienda
+) AS MinPrecios
+ON PT.IdTienda = MinPrecios.IdTienda AND PT.PrecioProducto = MinPrecios.PrecioMinimo;
 
 -- [03] Ventas por mes, separadas entre Boletas y Facturas.
 
