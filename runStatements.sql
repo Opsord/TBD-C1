@@ -122,7 +122,28 @@ LIMIT
 
 -- [06] El vendedor con más ventas por mes.
 -- [07] El vendedor que ha recaudado más dinero para la tienda por año.
--- [08] El vendedor con más productos vendidos por tienda.
+SELECT
+    VV.IdVendedor,
+    E.NombreEmpleado || ' ' || E.ApellidoPatEmpleado AS NombreVendedor,
+    EXTRACT(
+        YEAR
+        FROM
+            V.FechaVenta
+    ) AS Año,
+    SUM(V.MontoVenta) AS TotalRecaudado
+FROM
+    Venta V
+    JOIN Venta_Vendedor VV ON V.IdVenta = VV.IdVenta
+    JOIN Vendedor VE ON VV.IdVendedor = VE.IdVendedor
+    JOIN Empleado E ON VE.IdEmpleado = E.IdEmpleado
+GROUP BY
+    VV.IdVendedor,
+    Año,
+    NombreVendedor
+ORDER BY
+    Año,
+    TotalRecaudado DESC --
+    -- [08] El vendedor con más productos vendidos por tienda.
 SELECT
     t.IdTienda,
     t.NombreTienda,
