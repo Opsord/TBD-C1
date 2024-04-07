@@ -171,6 +171,35 @@ LIMIT
     1;
 
 -- [06] El vendedor con más ventas por mes.
+SELECT
+    E.IdEmpleado,
+    E.NombreEmpleado,
+    E.ApellidoPatEmpleado,
+    E.ApellidoMatEmpleado,
+    EXTRACT(
+        YEAR
+        FROM
+            V.FechaVenta
+    ) AS Año,
+    EXTRACT(
+        MONTH
+        FROM
+            V.FechaVenta
+    ) AS Mes,
+    COUNT(*) AS NumeroDeVentas
+FROM
+    Venta V
+    JOIN Vendedor VE ON V.IdVendedor = VE.IdVendedor
+    JOIN Empleado E ON VE.IdEmpleado = E.IdEmpleado
+GROUP BY
+    E.IdEmpleado,
+    Año,
+    Mes
+ORDER BY
+    Año,
+    Mes,
+    NumeroDeVentas DESC;
+
 -- [07] El vendedor que ha recaudado más dinero para la tienda por año.
 SELECT
     T.IdTienda,
