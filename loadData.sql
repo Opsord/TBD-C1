@@ -542,20 +542,6 @@ VALUES
     (20, 'Tienda Valdivia', 'Av. Picarte 4243', 20);
 
 INSERT INTO
-    Venta (
-        IdVenta,
-        FechaVenta,
-        MontoVenta,
-        IdTipoDocumento,
-        IdTienda
-    )
-VALUES
-    (1, '2024/03/01', 149600, 1, 6),
-    (2, '2023/05/12', 91400, 2, 11),
-    (9, '2023/03/09', 40000, 9, 1),
-    (13, '2019/11/04', 310000, 3, 4);
-
-INSERT INTO
     Empleado (
         IdEmpleado,
         RutEmpleado,
@@ -1378,6 +1364,21 @@ VALUES
     (50, 0.06, 50);
 
 INSERT INTO
+    Venta (
+        IdVenta,
+        FechaVenta,
+        MontoVenta,
+        IdTipoDocumento,
+        IdTienda,
+        IdVendedor
+    )
+VALUES
+    (1, '2024/03/01', 149600, 1, 6, 1),
+    (2, '2023/05/12', 91400, 2, 11, 2),
+    (3, '2023/03/09', 40000, 9, 1, 3),
+    (4, '2019/11/04', 310000, 3, 4, 3);
+
+INSERT INTO
     Sueldo(MontoSueldo, FechaPago, IdEmpleado)
 VALUES
     (713931, ' 2020-04-13 ', 1),
@@ -1409,26 +1410,11 @@ VALUES
     (17, 2, 15),
     (24, 2, 17),
     (13, 2, 10),
-    (44, 9, 20),
-    (96, 13, 6),
-    (98, 13, 12),
-    (90, 13, 3),
-    (86, 13, 1);
-
-INSERT INTO
-    Venta_Vendedor(IdVenta, IdVendedor)
-VALUES
-    (1, 9),
-    (2, 12),
-    (1, 9),
-    (1, 9),
-    (1, 9),
-    (9, 2),
-    (9, 2),
-    (9, 2),
-    (13, 5),
-    (13, 5),
-    (13, 5);
+    (44, 3, 20),
+    (96, 4, 6),
+    (98, 4, 12),
+    (90, 4, 3),
+    (86, 4, 1);
 
 INSERT INTO
     Tienda_Empleado(IdTienda, IdEmpleado)
