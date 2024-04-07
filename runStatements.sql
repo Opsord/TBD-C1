@@ -171,34 +171,77 @@ LIMIT
     1;
 
 -- [06] El vendedor con más ventas por mes.
+WITH VentasRankeadas AS (
+    SELECT
+        T.IdTienda,
+        E.IdEmpleado,
+        E.NombreEmpleado,
+        E.ApellidoPatEmpleado,
+        E.ApellidoMatEmpleado,
+        EXTRACT(
+            YEAR
+            FROM
+                V.FechaVenta
+        ) AS Año,
+        EXTRACT(
+            MONTH
+            FROM
+                V.FechaVenta
+        ) AS Mes,
+        COUNT(V.IdVenta) AS NumeroDeVentas,
+        RANK() OVER (
+            PARTITION BY T.IdTienda,
+            EXTRACT(
+                YEAR
+                FROM
+                    V.FechaVenta
+            ),
+            EXTRACT(
+                MONTH
+                FROM
+                    V.FechaVenta
+            )
+            ORDER BY
+                COUNT(V.IdVenta) DESC
+        ) AS Rango
+    FROM
+        Venta V
+        JOIN Tienda T ON V.IdTienda = T.IdTienda
+        JOIN Vendedor VE ON V.IdVendedor = VE.IdVendedor
+        JOIN Empleado E ON VE.IdEmpleado = E.IdEmpleado
+    GROUP BY
+        T.IdTienda,
+        E.IdEmpleado,
+        EXTRACT(
+            YEAR
+            FROM
+                V.FechaVenta
+        ),
+        EXTRACT(
+            MONTH
+            FROM
+                V.FechaVenta
+        )
+)
 SELECT
-    E.IdEmpleado,
-    E.NombreEmpleado,
-    E.ApellidoPatEmpleado,
-    E.ApellidoMatEmpleado,
-    EXTRACT(
-        YEAR
-        FROM
-            V.FechaVenta
-    ) AS Año,
-    EXTRACT(
-        MONTH
-        FROM
-            V.FechaVenta
-    ) AS Mes,
-    COUNT(*) AS NumeroDeVentas
-FROM
-    Venta V
-    JOIN Vendedor VE ON V.IdVendedor = VE.IdVendedor
-    JOIN Empleado E ON VE.IdEmpleado = E.IdEmpleado
-GROUP BY
-    E.IdEmpleado,
-    Año,
-    Mes
-ORDER BY
+    IdTienda,
+    IdEmpleado,
+    NombreEmpleado,
+    ApellidoPatEmpleado,
+    ApellidoMatEmpleado,
     Año,
     Mes,
-    NumeroDeVentas DESC;
+    NumeroDeVentas,
+    Rango
+FROM
+    VentasRankeadas
+WHERE
+    Rango = 1
+ORDER BY
+    IdTienda,
+    Año,
+    Mes,
+    Rango;
 
 -- [07] El vendedor que ha recaudado más dinero para la tienda por año.
 SELECT
