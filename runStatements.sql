@@ -73,8 +73,8 @@ SELECT
             v.FechaVenta
     ) AS Mes,
     CASE
-        WHEN td.TipoDocumento = 1 THEN 'Boleta'
-        WHEN td.TipoDocumento = 0 THEN 'Factura'
+        WHEN td.TipoDocumento = 1 THEN 'Factura'
+        WHEN td.TipoDocumento = 0 THEN 'Boleta'
     END AS Tipo_Documento,
     COUNT(v.IdVenta) AS Total_Ventas
 FROM
