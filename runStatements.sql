@@ -1,5 +1,4 @@
 -- [01] Producto más vendido por mes el 2021.
-
 WITH VentasPorMes AS (
     SELECT
         EXTRACT(
@@ -48,9 +47,7 @@ WHERE
 -- OVER [PARTITION BY | ORDER BY]: Distribuye las filas del conjunto de resultados en grupos 
 -- RANK: Asigna un clasificacion a cada fila dentro de un partidicon de un conjunto de resultados
 -- RANK VS ROW_NUMBER: La primera permite asignar el mismo rango a multiples filas
-
 -- [02] Producto más económico por tienda.
-
 SELECT
     PT.IdTienda,
     PT.IdProducto,
@@ -69,7 +66,6 @@ FROM
     AND PT.PrecioProducto = MinPrecios.PrecioMinimo;
 
 -- [03] Ventas por mes, separadas entre Boletas y Facturas.
-
 SELECT
     EXTRACT(
         MONTH
@@ -93,25 +89,58 @@ GROUP BY
     td.TipoDocumento;
 
 -- [04] Empleado que ganó más por tienda en 2020, indicando la comuna donde vive y el cargo que tiene en la empresa.
-
 WITH SueldosPorEmpleado AS (
-    SELECT t.nombretienda AS tienda, EXTRACT(MONTH FROM s.fechapago) AS mes, e.nombreempleado AS nombreempleado, s.montosueldo AS sueldo,c.nombrecomuna AS comuna, e.cargoempleado AS cargo, RANK() OVER (PARTITION BY t.IdTienda, EXTRACT(MONTH FROM s.fechapago) ORDER BY s.MontoSueldo DESC) AS ranking
-    FROM empleado e 
-    JOIN sueldo s ON e.idempleado = s.idempleado
-    JOIN comuna c ON e.idcomuna = c.idcomuna
-    JOIN tienda_empleado te ON e.idempleado = te.idempleado
-    JOIN tienda t ON t.idtienda = te.idtienda
-    WHERE EXTRACT(YEAR FROM s.fechapago) = 2020
-    ORDER BY tienda, mes
+    SELECT
+        t.nombretienda AS tienda,
+        EXTRACT(
+            MONTH
+            FROM
+                s.fechapago
+        ) AS mes,
+        e.nombreempleado AS nombreempleado,
+        s.montosueldo AS sueldo,
+        c.nombrecomuna AS comuna,
+        e.cargoempleado AS cargo,
+        RANK() OVER (
+            PARTITION BY t.IdTienda,
+            EXTRACT(
+                MONTH
+                FROM
+                    s.fechapago
+            )
+            ORDER BY
+                s.MontoSueldo DESC
+        ) AS ranking
+    FROM
+        empleado e
+        JOIN sueldo s ON e.idempleado = s.idempleado
+        JOIN comuna c ON e.idcomuna = c.idcomuna
+        JOIN tienda_empleado te ON e.idempleado = te.idempleado
+        JOIN tienda t ON t.idtienda = te.idtienda
+    WHERE
+        EXTRACT(
+            YEAR
+            FROM
+                s.fechapago
+        ) = 2020
+    ORDER BY
+        tienda,
+        mes
 )
-SELECT tienda, mes, nombreempleado, sueldo, comuna, cargo
-FROM SueldosPorEmpleado
-WHERE ranking = 1;
+SELECT
+    tienda,
+    mes,
+    nombreempleado,
+    sueldo,
+    comuna,
+    cargo
+FROM
+    SueldosPorEmpleado
+WHERE
+    ranking = 1;
 
 -- [05] La tienda que tiene menos empleados.
-
 -- Incluye tiendas sin empleados
-
 SELECT
     Tienda.NombreTienda,
     COUNT(Empleado.IdEmpleado) AS TotalEmpleados
@@ -126,7 +155,6 @@ LIMIT
     1;
 
 -- Solo son tiendas con por lo menos un empleado
-
 SELECT
     Tienda.NombreTienda,
     COUNT(Empleado.IdEmpleado) AS TotalEmpleados
@@ -143,12 +171,14 @@ LIMIT
     1;
 
 -- [06] El vendedor con más ventas por mes.
-
 -- [07] El vendedor que ha recaudado más dinero para la tienda por año.
-
 SELECT
-    VV.IdVendedor,
-    E.NombreEmpleado || ' ' || E.ApellidoPatEmpleado AS NombreVendedor,
+    T.IdTienda,
+    T.NombreTienda,
+    E.IdEmpleado,
+    E.NombreEmpleado,
+    E.ApellidoPatEmpleado,
+    E.ApellidoMatEmpleado,
     EXTRACT(
         YEAR
         FROM
@@ -157,41 +187,46 @@ SELECT
     SUM(V.MontoVenta) AS TotalRecaudado
 FROM
     Venta V
-    JOIN Venta_Vendedor VV ON V.IdVenta = VV.IdVenta
-    JOIN Vendedor VE ON VV.IdVendedor = VE.IdVendedor
+    JOIN Tienda T ON V.IdTienda = T.IdTienda
+    JOIN Vendedor VE ON V.IdVendedor = VE.IdVendedor
     JOIN Empleado E ON VE.IdEmpleado = E.IdEmpleado
 GROUP BY
-    VV.IdVendedor,
-    Año,
-    NombreVendedor
+    T.IdTienda,
+    T.NombreTienda,
+    E.IdEmpleado,
+    E.NombreEmpleado,
+    E.ApellidoPatEmpleado,
+    E.ApellidoMatEmpleado,
+    Año
 ORDER BY
+    t.IdTienda,
     Año,
     TotalRecaudado DESC;
 
 -- [08] El vendedor con más productos vendidos por tienda.
-
 SELECT
-    t.IdTienda,
-    t.NombreTienda,
-    e.IdEmpleado,
-    CONCAT(e.NombreEmpleado, ' ', e.ApellidoPatEmpleado) AS NombreVendedor,
-    SUM(pv.CantidadVendida) AS TotalProductosVendidos
+    V.IdTienda,
+    VE.IdVendedor,
+    E.NombreEmpleado,
+    E.ApellidoPatEmpleado,
+    E.ApellidoMatEmpleado,
+    COUNT(PV.CantidadVendida) AS TotalProductosVendidos
 FROM
-    Venta v
-    JOIN Tienda t ON v.IdTienda = t.IdTienda
-    JOIN Venta_Vendedor vv ON v.IdVenta = vv.IdVenta
-    JOIN Vendedor ven ON vv.IdVendedor = ven.IdVendedor
-    JOIN Empleado e ON ven.IdEmpleado = e.IdEmpleado
-    JOIN Producto_Venta pv ON v.IdVenta = pv.IdVenta
+    Venta V
+    JOIN Vendedor VE ON V.IdVendedor = VE.IdVendedor
+    JOIN Empleado E ON VE.IdEmpleado = E.IdEmpleado
+    JOIN Producto_Venta PV ON V.IdVenta = PV.IdVenta
 GROUP BY
-    t.IdTienda,
-    e.IdEmpleado
+    V.IdTienda,
+    VE.IdVendedor,
+    E.NombreEmpleado,
+    E.ApellidoPatEmpleado,
+    E.ApellidoMatEmpleado
 ORDER BY
-    t.IdTienda,
-    SUM(pv.CantidadVendida) DESC;
+    V.IdTienda,
+    TotalProductosVendidos DESC;
 
 -- [09] El empleado con mayor sueldo por mes.
-
 WITH SueldosPorMes AS (
     SELECT
         EXTRACT(
@@ -235,7 +270,6 @@ WHERE
     ranking = 1;
 
 -- [10] La tienda con menor recaudación por mes.
-
 WITH RecaudacionPorMeses AS (
     SELECT
         t.nombretienda AS nombretienda,
