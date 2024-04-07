@@ -1,47 +1,51 @@
 -- [01] Producto más vendido por mes el 2021.
-WITH VentasPorMes AS (
+WITH VentasPorProducto AS (
     SELECT
         EXTRACT(
             MONTH
             FROM
-                v.fechaventa
-        ) AS mes,
-        p.nombreproducto AS nombreproducto,
-        COUNT(*) AS cantidadvendida
+                V.FechaVenta
+        ) AS Mes,
+        PV.IdProducto,
+        SUM(PV.CantidadVendida) AS TotalVendido
     FROM
-        venta v
-        JOIN producto_venta pv ON v.idventa = pv.idventa
-        JOIN producto p ON p.idproducto = pv.idproducto
+        Producto_Venta PV
+        JOIN Venta V ON PV.IdVenta = V.IdVenta
     WHERE
         EXTRACT(
             YEAR
             FROM
-                v.fechaventa
+                V.FechaVenta
         ) = 2021
     GROUP BY
-        mes,
-        p.nombreproducto
+        Mes,
+        PV.IdProducto
+),
+RankingPorMes AS (
+    SELECT
+        Mes,
+        IdProducto,
+        TotalVendido,
+        RANK() OVER (
+            PARTITION BY Mes
+            ORDER BY
+                TotalVendido DESC
+        ) AS Rank
+    FROM
+        VentasPorProducto
 )
 SELECT
-    mes,
-    nombreproducto,
-    cantidadvendida
+    R.Mes,
+    R.IdProducto,
+    P.NombreProducto,
+    R.TotalVendido
 FROM
-    (
-        SELECT
-            mes,
-            nombreproducto,
-            cantidadvendida,
-            RANK() OVER(
-                PARTITION BY mes
-                ORDER BY
-                    cantidadvendida DESC
-            ) AS ranking
-        FROM
-            VentasPorMes
-    ) AS RankingProductoVentasPorMes
+    RankingPorMes R
+    JOIN Producto P ON R.IdProducto = P.IdProducto
 WHERE
-    ranking = 1;
+    R.Rank = 1
+ORDER BY
+    R.Mes;
 
 -- EXTRACT: Extrae un campo especifico (dia, mes, horas, minutos, etc) de un valor de fecha u hora
 -- OVER [PARTITION BY | ORDER BY]: Distribuye las filas del conjunto de resultados en grupos 
