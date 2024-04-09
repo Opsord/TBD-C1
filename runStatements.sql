@@ -290,5 +290,3 @@ FROM
     ) AS RankingRecaudacionPorMeses
 WHERE
     ranking = 1;
-
--- Falta probar esta consulta
