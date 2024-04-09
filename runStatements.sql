@@ -61,14 +61,20 @@ GROUP BY
 -- [04] Empleado que ganó más por tienda en 2020, indicando la comuna donde vive y el cargo que tiene en la empresa.
 
 WITH SueldosPorEmpleado AS (
-    SELECT t.nombretienda AS tienda, EXTRACT(MONTH FROM s.fechapago) AS mes, e.nombreempleado AS nombreempleado, s.montosueldo AS sueldo, c.nombrecomuna AS comuna, e.cargoempleado AS cargo, RANK() OVER(PARTITION BY t.IdTienda, EXTRACT(MONTH FROM s.fechapago)ORDER BY s.MontoSueldo DESC)
+    SELECT 
+        t.nombretienda AS tienda, 
+        EXTRACT(MONTH FROM s.fechapago) AS mes, 
+        e.nombreempleado AS nombreempleado, 
+        s.montosueldo AS sueldo, 
+        c.nombrecomuna AS comuna, 
+        e.cargoempleado AS cargo, 
+        RANK() OVER(PARTITION BY t.IdTienda, EXTRACT(MONTH FROM s.fechapago) ORDER BY s.MontoSueldo DESC) AS ranking
     FROM empleado e
         JOIN sueldo s ON e.idempleado = s.idempleado
         JOIN comuna c ON e.idcomuna = c.idcomuna
         JOIN tienda_empleado te ON e.idempleado = te.idempleado
         JOIN tienda t ON t.idtienda = te.idtienda
     WHERE EXTRACT(YEAR FROM s.fechapago) = 2020
-    ORDER BY tienda, mes
 )
 SELECT tienda, mes, nombreempleado, sueldo, comuna, cargo
 FROM SueldosPorEmpleado
