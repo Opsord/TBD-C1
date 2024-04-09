@@ -1,91 +1,35 @@
-INSERT INTO
-    Producto (IdProducto, NombreProducto, DescripcionProducto)
+INSERT INTO 
+    Producto (
+        IdProducto, 
+        NombreProducto, 
+        DescripcionProducto
+    )
 VALUES
     (1, 'Cafe', 'Tarro de cafe de 500 gramos'),
-    (
-        2,
-        'Té verde',
-        'Caja de té verde con 25 bolsitas'
-    ),
-    (
-        3,
-        'Azúcar',
-        'Paquete de azúcar refinada de 1 kg'
-    ),
+    (2, 'Té verde', 'Caja de té verde con 25 bolsitas'),
+    (3, 'Azúcar', 'Paquete de azúcar refinada de 1 kg'),
     (4, 'Leche', 'Botella de leche entera de 1 litro'),
-    (
-        5,
-        'Harina de trigo',
-        'Bolsa de harina de trigo de 2 kg'
-    ),
+    (5, 'Harina de trigo', 'Bolsa de harina de trigo de 2 kg'),
     (6, 'Arroz', 'Paquete de arroz blanco de 5 kg'),
-    (
-        7,
-        'Pasta',
-        'Paquete de pasta corta de trigo de 500 gramos'
-    ),
-    (
-        8,
-        'Aceite de oliva',
-        'Botella de aceite de oliva virgen extra de 750 ml'
-    ),
+    (7, 'Pasta', 'Paquete de pasta corta de trigo de 500 gramos'),
+    (8, 'Aceite de oliva', 'Botella de aceite de oliva virgen extra de 750 ml'),
     (9, 'Sal', 'Bolsa de sal de mar de 1 kg'),
-    (
-        10,
-        'Miel',
-        'Frascos de miel de abeja pura de 500 gramos'
-    ),
-    (
-        11,
-        'Cereal',
-        'Caja de cereal de maíz de 500 gramos'
-    ),
+    (10, 'Miel', 'Frascos de miel de abeja pura de 500 gramos'),
+    (11, 'Cereal', 'Caja de cereal de maíz de 500 gramos'),
     (12, 'Pan', 'Pan francés de 500 gramos'),
-    (
-        13,
-        'Yogur',
-        'Envase de yogur natural de 1 litro'
-    ),
-    (
-        14,
-        'Mantequilla',
-        'Tableta de mantequilla de 250 gramos'
-    ),
+    (13, 'Yogur', 'Envase de yogur natural de 1 litro'),
+    (14, 'Mantequilla', 'Tableta de mantequilla de 250 gramos'),
     (15, 'Huevos', 'Docena de huevos frescos'),
-    (
-        16,
-        'Queso',
-        'Cuña de queso cheddar de 500 gramos'
-    ),
-    (
-        17,
-        'Atún en lata',
-        'Lata de atún en agua de 200 gramos'
-    ),
-    (
-        18,
-        'Papas fritas',
-        'Bolsa de papas fritas de 150 gramos'
-    ),
-    (
-        19,
-        'Refresco de cola',
-        'Botella de refresco de cola de 2 litros'
-    ),
-    (
-        20,
-        'Agua mineral',
-        'Botella de agua mineral sin gas de 1.5 litros'
-    ),
+    (16, 'Queso', 'Cuña de queso cheddar de 500 gramos'),
+    (17, 'Atún en lata', 'Lata de atún en agua de 200 gramos'),
+    (18, 'Papas fritas', 'Bolsa de papas fritas de 150 gramos'),
+    (19, 'Refresco de cola', 'Botella de refresco de cola de 2 litros'),
+    (20, 'Agua mineral', 'Botella de agua mineral sin gas de 1.5 litros'),
     (21, 'Manzanas', 'Kilo de manzanas frescas'),
     (22, 'Plátanos', 'Kilo de plátanos maduros'),
     (23, 'Naranjas', 'Docena de naranjas'),
     (24, 'Pera', 'Kilo de peras jugosas'),
-    (
-        25,
-        'Fresas',
-        'Envase de fresas frescas de 500 gramos'
-    ),
+    (25, 'Fresas', 'Envase de fresas frescas de 500 gramos'),
     (26, 'Pimiento rojo', 'Kilo de pimientos rojos'),
     (27, 'Cebolla', 'Kilo de cebollas blancas'),
     (28, 'Zanahorias', 'Kilo de zanahorias frescas'),
@@ -93,326 +37,74 @@ VALUES
     (30, 'Espinacas', 'Manojo de espinacas frescas'),
     (31, 'Lechuga', 'Cabeza de lechuga iceberg'),
     (32, 'Tomates', 'Kilo de tomates rojos'),
-    (
-        33,
-        'Pollo entero',
-        'Pollo entero fresco de 2 kilos'
-    ),
-    (
-        34,
-        'Pechuga de pollo',
-        'Kilo de pechuga de pollo sin hueso'
-    ),
-    (
-        35,
-        'Carne molida',
-        'Kilo de carne molida de res'
-    ),
-    (
-        36,
-        'Filete de res',
-        'Filete de res de 300 gramos'
-    ),
-    (
-        37,
-        'Salchichas',
-        'Paquete de salchichas de 500 gramos'
-    ),
-    (
-        38,
-        'Jamón',
-        'Rebanadas de jamón de pavo de 200 gramos'
-    ),
+    (33, 'Pollo entero', 'Pollo entero fresco de 2 kilos'),
+    (34, 'Pechuga de pollo', 'Kilo de pechuga de pollo sin hueso'),
+    (35, 'Carne molida', 'Kilo de carne molida de res'),
+    (36, 'Filete de res', 'Filete de res de 300 gramos'),
+    (37, 'Salchichas', 'Paquete de salchichas de 500 gramos'),
+    (38, 'Jamón', 'Rebanadas de jamón de pavo de 200 gramos'),
     (39, 'Pan integral', 'Pan integral de 500 gramos'),
-    (
-        40,
-        'Galletas',
-        'Paquete de galletas de avena de 300 gramos'
-    ),
-    (
-        41,
-        'Chocolate',
-        'Tableta de chocolate negro de 100 gramos'
-    ),
-    (
-        42,
-        'Helado',
-        'Envase de helado de vainilla de 1 litro'
-    ),
-    (
-        43,
-        'Pizza congelada',
-        'Pizza congelada de pepperoni de 500 gramos'
-    ),
-    (
-        44,
-        'Salsa de tomate',
-        'Frascos de salsa de tomate de 500 gramos'
-    ),
-    (
-        45,
-        'Mayonesa',
-        'Frascos de mayonesa de 250 gramos'
-    ),
-    (
-        46,
-        'Vinagre',
-        'Botella de vinagre de vino de 500 ml'
-    ),
+    (40, 'Galletas', 'Paquete de galletas de avena de 300 gramos'),
+    (41, 'Chocolate', 'Tableta de chocolate negro de 100 gramos'),
+    (42, 'Helado', 'Envase de helado de vainilla de 1 litro'),
+    (43, 'Pizza congelada', 'Pizza congelada de pepperoni de 500 gramos'),
+    (44, 'Salsa de tomate', 'Frascos de salsa de tomate de 500 gramos'),
+    (45, 'Mayonesa', 'Frascos de mayonesa de 250 gramos'),
+    (46, 'Vinagre', 'Botella de vinagre de vino de 500 ml'),
     (47, 'Cerveza', 'Six pack de cerveza lager'),
-    (
-        48,
-        'Vino tinto',
-        'Botella de vino tinto reserva'
-    ),
-    (
-        49,
-        'Whisky',
-        'Botella de whisky escocés de 750 ml'
-    ),
+    (48, 'Vino tinto', 'Botella de vino tinto reserva'),
+    (49, 'Whisky', 'Botella de whisky escocés de 750 ml'),
     (50, 'Vodka', 'Botella de vodka ruso de 700 ml'),
     (51, 'Camiseta', 'Camiseta básica de algodón'),
-    (
-        52,
-        'Pantalón Vaquero',
-        'Pantalón vaquero estilo slim fit'
-    ),
-    (
-        53,
-        'Zapatillas Deportivas',
-        'Zapatillas deportivas para correr'
-    ),
-    (
-        54,
-        'Televisor LED',
-        'Televisor LED de 32 pulgadas'
-    ),
-    (
-        55,
-        'Smartphone',
-        'Smartphone de última generación'
-    ),
-    (
-        56,
-        'Laptop',
-        'Laptop ultradelgada con pantalla táctil'
-    ),
+    (52, 'Pantalón Vaquero', 'Pantalón vaquero estilo slim fit'),
+    (53, 'Zapatillas Deportivas', 'Zapatillas deportivas para correr'),
+    (54, 'Televisor LED', 'Televisor LED de 32 pulgadas'),
+    (55, 'Smartphone', 'Smartphone de última generación'),
+    (56, 'Laptop', 'Laptop ultradelgada con pantalla táctil'),
     (57, 'Gorra', 'Gorra ajustable con diseño urbano'),
-    (
-        58,
-        'Chaqueta de Cuero',
-        'Chaqueta de cuero genuino'
-    ),
-    (
-        59,
-        'Reloj Inteligente',
-        'Reloj inteligente con monitor de actividad'
-    ),
-    (
-        60,
-        'Cámara Digital',
-        'Cámara digital compacta de 20 megapíxeles'
-    ),
-    (
-        61,
-        'Botas de Senderismo',
-        'Botas de senderismo impermeables'
-    ),
-    (
-        62,
-        'Sudadera con Capucha',
-        'Sudadera con capucha y bolsillo canguro'
-    ),
-    (
-        63,
-        'Auriculares Inalámbricos',
-        'Auriculares inalámbricos con cancelación de ruido'
-    ),
-    (
-        64,
-        'Chaqueta Impermeable',
-        'Chaqueta impermeable con forro polar desmontable'
-    ),
-    (
-        65,
-        'Altavoz Bluetooth',
-        'Altavoz Bluetooth portátil resistente al agua'
-    ),
-    (
-        66,
-        'Mochila',
-        'Mochila urbana con compartimento para laptop'
-    ),
-    (
-        67,
-        'Jersey de Lana',
-        'Jersey de lana merina de alta calidad'
-    ),
-    (
-        68,
-        'Tabla de Skate',
-        'Tabla de skate profesional con diseño personalizado'
-    ),
-    (
-        69,
-        'Cargador Inalámbrico',
-        'Cargador inalámbrico rápido para smartphones'
-    ),
-    (
-        70,
-        'Gafas de Sol',
-        'Gafas de sol polarizadas con montura de acetato'
-    ),
-    (
-        71,
-        'Maleta de Viaje',
-        'Maleta de viaje rígida con ruedas giratorias'
-    ),
-    (
-        72,
-        'Teclado Mecánico',
-        'Teclado mecánico para gaming con retroiluminación RGB'
-    ),
-    (
-        73,
-        'Cámara de Seguridad',
-        'Cámara de seguridad con visión nocturna'
-    ),
-    (
-        74,
-        'Plancha de Pelo',
-        'Plancha de pelo profesional con placas de cerámica'
-    ),
-    (
-        75,
-        'Mochila Térmica',
-        'Mochila térmica para mantener la comida caliente o fría'
-    ),
-    (
-        76,
-        'Caja de Herramientas',
-        'Caja de herramientas de acero inoxidable con 150 piezas'
-    ),
-    (
-        77,
-        'Smartwatch',
-        'Smartwatch con pantalla táctil y GPS integrado'
-    ),
-    (
-        78,
-        'Saco de Dormir',
-        'Saco de dormir ultraligero para actividades al aire libre'
-    ),
-    (
-        79,
-        'Estuche para Cámara',
-        'Estuche acolchado para proteger la cámara y sus accesorios'
-    ),
-    (
-        80,
-        'Plancha de Vapor',
-        'Plancha de vapor vertical portátil para ropa'
-    ),
-    (
-        81,
-        'Bicicleta de Montaña',
-        'Bicicleta de montaña con cuadro de aluminio y suspensión delantera'
-    ),
-    (
-        82,
-        'Máquina de Café',
-        'Máquina de café espresso automática'
-    ),
-    (
-        83,
-        'Parlante Inteligente',
-        'Parlante inteligente con asistente virtual integrado'
-    ),
-    (
-        84,
-        'Estabilizador de Cámara',
-        'Estabilizador de cámara de 3 ejes para grabación suave'
-    ),
-    (
-        85,
-        'Mesa de Escritorio',
-        'Mesa de escritorio de madera con diseño moderno'
-    ),
-    (
-        86,
-        'Aspiradora Robot',
-        'Aspiradora robot con mapeo inteligente'
-    ),
-    (
-        87,
-        'Máquina de Coser',
-        'Máquina de coser electrónica con 200 puntadas'
-    ),
-    (
-        88,
-        'Bolso de Viaje',
-        'Bolso de viaje de cuero genuino con capacidad para portátil'
-    ),
-    (
-        89,
-        'Cepillo Eléctrico',
-        'Cepillo eléctrico recargable con cabezales intercambiables'
-    ),
-    (
-        90,
-        'Portátil Convertible',
-        'Portátil convertible con pantalla táctil y lápiz óptico'
-    ),
-    (
-        91,
-        'Robot de Cocina',
-        'Robot de cocina multifunción con pantalla LCD'
-    ),
-    (
-        92,
-        'Lámpara LED',
-        'Lámpara LED de pie regulable con control táctil'
-    ),
-    (
-        93,
-        'Silla de Oficina',
-        'Silla de oficina ergonómica con soporte lumbar ajustable'
-    ),
-    (
-        94,
-        'Afeitadora Eléctrica',
-        'Afeitadora eléctrica recargable con cabezales flotantes'
-    ),
-    (
-        95,
-        'Patinete Eléctrico',
-        'Patinete eléctrico plegable con motor de 250W'
-    ),
-    (
-        96,
-        'Bicicleta Eléctrica',
-        'Bicicleta eléctrica urbana con batería de larga duración'
-    ),
-    (
-        97,
-        'Robot Aspirador',
-        'Robot aspirador con función de mapeo y limpieza programable'
-    ),
-    (
-        98,
-        'Manta Eléctrica',
-        'Manta eléctrica con ajuste de temperatura y temporizador'
-    ),
-    (
-        99,
-        'Escáner Portátil',
-        'Escáner portátil de documentos con alimentación USB'
-    ),
-    (
-        100,
-        'Altavoz Inteligente',
-        'Altavoz inteligente con asistente de voz y control por WiFi'
-    );
+    (58, 'Chaqueta de Cuero', 'Chaqueta de cuero genuino'),
+    (59, 'Reloj Inteligente', 'Reloj inteligente con monitor de actividad'),
+    (60, 'Cámara Digital', 'Cámara digital compacta de 20 megapíxeles'),
+    (61, 'Botas de Senderismo', 'Botas de senderismo impermeables'),
+    (62, 'Sudadera con Capucha', 'Sudadera con capucha y bolsillo canguro'),
+    (63, 'Auriculares Inalámbricos', 'Auriculares inalámbricos con cancelación de ruido'),
+    (64, 'Chaqueta Impermeable', 'Chaqueta impermeable con forro polar desmontable'),
+    (65, 'Altavoz Bluetooth', 'Altavoz Bluetooth portátil resistente al agua'),
+    (66, 'Mochila', 'Mochila urbana con compartimento para laptop'),
+    (67, 'Jersey de Lana', 'Jersey de lana merina de alta calidad'),
+    (68, 'Tabla de Skate', 'Tabla de skate profesional con diseño personalizado'),
+    (69, 'Cargador Inalámbrico', 'Cargador inalámbrico rápido para smartphones'),
+    (70, 'Gafas de Sol', 'Gafas de sol polarizadas con montura de acetato'),
+    (71, 'Maleta de Viaje', 'Maleta de viaje rígida con ruedas giratorias'),
+    (72, 'Teclado Mecánico', 'Teclado mecánico para gaming con retroiluminación RGB'),
+    (73, 'Cámara de Seguridad', 'Cámara de seguridad con visión nocturna'),
+    (74, 'Plancha de Pelo', 'Plancha de pelo profesional con placas de cerámica'),
+    (75, 'Mochila Térmica', 'Mochila térmica para mantener la comida caliente o fría'),
+    (76, 'Caja de Herramientas', 'Caja de herramientas de acero inoxidable con 150 piezas'),
+    (77, 'Smartwatch', 'Smartwatch con pantalla táctil y GPS integrado'),
+    (78, 'Saco de Dormir', 'Saco de dormir ultraligero para actividades al aire libre'),
+    (79, 'Estuche para Cámara', 'Estuche acolchado para proteger la cámara y sus accesorios'),
+    (80, 'Plancha de Vapor', 'Plancha de vapor vertical portátil para ropa'),
+    (81, 'Bicicleta de Montaña', 'Bicicleta de montaña con cuadro de aluminio y suspensión delantera'),
+    (82, 'Máquina de Café', 'Máquina de café espresso automática'),
+    (83, 'Parlante Inteligente', 'Parlante inteligente con asistente virtual integrado'),
+    (84, 'Estabilizador de Cámara', 'Estabilizador de cámara de 3 ejes para grabación suave'),
+    (85, 'Mesa de Escritorio', 'Mesa de escritorio de madera con diseño moderno'),
+    (86, 'Aspiradora Robot', 'Aspiradora robot con mapeo inteligente'),
+    (87, 'Máquina de Coser', 'Máquina de coser electrónica con 200 puntadas'),
+    (88, 'Bolso de Viaje', 'Bolso de viaje de cuero genuino con capacidad para portátil'),
+    (89, 'Cepillo Eléctrico', 'Cepillo eléctrico recargable con cabezales intercambiables'),
+    (90, 'Portátil Convertible', 'Portátil convertible con pantalla táctil y lápiz óptico'),
+    (91, 'Robot de Cocina', 'Robot de cocina multifunción con pantalla LCD'),
+    (92, 'Lámpara LED', 'Lámpara LED de pie regulable con control táctil'),
+    (93, 'Silla de Oficina', 'Silla de oficina ergonómica con soporte lumbar ajustable'),
+    (94, 'Afeitadora Eléctrica', 'Afeitadora eléctrica recargable con cabezales flotantes'),
+    (95, 'Patinete Eléctrico', 'Patinete eléctrico plegable con motor de 250W'),
+    (96, 'Bicicleta Eléctrica', 'Bicicleta eléctrica urbana con batería de larga duración'),
+    (97, 'Robot Aspirador', 'Robot aspirador con función de mapeo y limpieza programable'),
+    (98, 'Manta Eléctrica', 'Manta eléctrica con ajuste de temperatura y temporizador'),
+    (99, 'Escáner Portátil', 'Escáner portátil de documentos con alimentación USB'),
+    (100, 'Altavoz Inteligente', 'Altavoz inteligente con asistente de voz y control por WiFi');
 
 INSERT INTO
     TipoDocumento (
@@ -1379,7 +1071,50 @@ VALUES
     (4, '2019/11/04', 310000, 3, 4, 3),
     (5, '2019/11/06', 290000, 8, 4, 3),
     (6, '2019/11/05', 300000, 10, 4, 5),
-    (7, '2021/05/05', 300000, 4, 8, 8);
+    (7, '2021/05/05', 300000, 4, 8, 8),
+    (8, '2024/04/01', 135000, 1, 7, 2),
+    (9, '2024/04/02', 76000, 2, 15, 10),
+    (10, '2024/04/03', 48000, 3, 2, 20),
+    (11, '2024/04/04', 230000, 1, 13, 11),
+    (12, '2024/04/05', 195000, 2, 19, 14),
+    (13, '2024/04/06', 30000, 3, 5, 25),
+    (14, '2024/04/07', 180000, 1, 16, 28),
+    (15, '2024/04/08', 65000, 2, 18, 31),
+    (16, '2024/04/09', 42000, 3, 20, 33),
+    (17, '2024/04/10', 280000, 1, 14, 35),
+    (18, '2024/04/11', 210000, 2, 3, 39),
+    (19, '2024/04/12', 35000, 3, 8, 42),
+    (20, '2024/04/13', 160000, 1, 12, 45),
+    (21, '2024/04/14', 89000, 2, 17, 48),
+    (22, '2024/04/15', 54000, 3, 9, 50),
+    (23, '2024/04/16', 275000, 1, 10, 24),
+    (24, '2024/04/17', 185000, 2, 1, 37),
+    (25, '2024/04/18', 32000, 3, 6, 20),
+    (26, '2024/04/19', 140000, 1, 5, 23),
+    (27, '2024/04/20', 72000, 2, 11, 46),
+    (28, '2024/04/21', 49000, 3, 15, 29),
+    (29, '2024/04/22', 240000, 1, 4, 12),
+    (30, '2024/04/23', 205000, 2, 7, 5),
+    (31, '2024/04/24', 38000, 3, 19, 38),
+    (32, '2024/04/25', 180000, 1, 13, 11),
+    (33, '2024/04/26', 97000, 2, 16, 44),
+    (34, '2024/04/27', 60000, 3, 18, 27),
+    (35, '2024/04/28', 310000, 1, 20, 50),
+    (36, '2024/04/29', 220000, 2, 14, 23),
+    (37, '2024/04/30', 42000, 3, 3, 16),
+    (38, '2024/05/01', 145000, 1, 6, 5),
+    (39, '2024/05/02', 68000, 2, 12, 12),
+    (40, '2024/05/03', 54000, 3, 16, 15),
+    (41, '2024/05/04', 245000, 1, 18, 18),
+    (42, '2024/05/05', 210000, 2, 20, 21),
+    (43, '2024/05/06', 28000, 3, 14, 24),
+    (44, '2024/05/07', 165000, 1, 7, 27),
+    (45, '2024/05/08', 91000, 2, 9, 30),
+    (46, '2024/05/09', 60000, 3, 11, 33),
+    (47, '2024/05/10', 265000, 1, 17, 36),
+    (48, '2024/05/11', 190000, 2, 19, 39),
+    (49, '2024/05/12', 31000, 3, 2, 42),
+    (50, '2024/05/13', 180000, 1, 8, 45);
 
 INSERT INTO
     Sueldo(MontoSueldo, FechaPago, IdEmpleado)
@@ -1401,7 +1136,36 @@ VALUES
     (480000, ' 2020-02-12 ', 7),
     (70003, ' 2021-05-13 ', 2),
     (100400, ' 2023-03-13 ', 1),
-    (10400, ' 2020-05-13 ', 1);
+    (10400, ' 2020-05-13 ', 1),
+    (713931, '2020-04-13', 4),
+    (873121, '2023-12-15', 6),
+    (645434, '2021-04-24', 8),
+    (7000001, '2020-08-12', 7),
+    (600000, '2023-01-23', 5),
+    (630000, '2022-07-02', 3),
+    (620000, '2019-06-22', 1),
+    (690000, '2022-10-05', 2),
+    (680000, '2024-11-12', 9),
+    (7000003, '2020-04-13', 10),
+    (1000000, '2020-04-13', 12),
+    (1893029, '2023-12-15', 14),
+    (420000, '2020-01-22', 16),
+    (620000, '2021-11-05', 18),
+    (480000, '2020-02-12', 20),
+    (70003, '2021-05-13', 22),
+    (100400, '2023-03-13', 24),
+    (10400, '2020-05-13', 26),
+    (713932, '2020-04-14', 28),
+    (873122, '2023-12-16', 30),
+    (645435, '2021-04-25', 32),
+    (7000002, '2020-08-13', 11),
+    (600001, '2023-01-24', 13),
+    (630001, '2022-07-03', 15),
+    (620001, '2019-06-23', 17),
+    (690001, '2022-10-06', 19),
+    (680001, '2024-11-13', 21),
+    (7000004, '2020-04-14', 23),
+    (1000001, '2020-04-14', 25);
 
 INSERT INTO
     Producto_Venta(IdProducto, IdVenta, CantidadVendida)
@@ -1418,7 +1182,100 @@ VALUES
     (98, 4, 12),
     (90, 4, 3),
     (66, 7, 10),
-    (86, 4, 1);
+    (86, 4, 1),
+    (5, 5, 10),
+    (7, 5, 5),
+    (13, 6, 8),
+    (19, 6, 15),
+    (27, 7, 20),
+    (36, 7, 12),
+    (40, 8, 6),
+    (45, 8, 8),
+    (49, 9, 4),
+    (55, 9, 3),
+    (63, 9, 5),
+    (68, 10, 2),
+    (75, 10, 1),
+    (79, 11, 3),
+    (83, 11, 10),
+    (89, 12, 7),
+    (92, 12, 4),
+    (97, 13, 2),
+    (100, 13, 1),
+    (6, 14, 10),
+    (10, 14, 5),
+    (16, 15, 4),
+    (21, 15, 6),
+    (29, 16, 3),
+    (35, 16, 7),
+    (41, 17, 5),
+    (46, 17, 9),
+    (50, 18, 10),
+    (56, 18, 2),
+    (61, 19, 6),
+    (67, 19, 4),
+    (72, 20, 3),
+    (76, 20, 8),
+    (81, 21, 2),
+    (87, 21, 5),
+    (91, 22, 7),
+    (95, 22, 3),
+    (98, 23, 1),
+    (99, 23, 4),
+    (4, 24, 9),
+    (9, 24, 6),
+    (15, 25, 3),
+    (20, 25, 5),
+    (25, 26, 8),
+    (30, 26, 2),
+    (34, 27, 4),
+    (39, 27, 7),
+    (43, 28, 5),
+    (48, 28, 6),
+    (52, 29, 3),
+    (58, 29, 9),
+    (62, 30, 4),
+    (69, 30, 6),
+    (73, 31, 2),
+    (78, 31, 7),
+    (82, 32, 4),
+    (88, 32, 8),
+    (93, 33, 1),
+    (96, 33, 5),
+    (100, 34, 6),
+    (4, 34, 9),
+    (9, 35, 3),
+    (15, 35, 7),
+    (20, 36, 4),
+    (25, 36, 8),
+    (30, 37, 1),
+    (35, 37, 5),
+    (39, 38, 6),
+    (43, 38, 3),
+    (48, 39, 5),
+    (52, 39, 7),
+    (58, 40, 2),
+    (62, 40, 9),
+    (69, 41, 3),
+    (73, 41, 6),
+    (78, 42, 1),
+    (82, 42, 8),
+    (88, 43, 4),
+    (93, 43, 7),
+    (96, 44, 5),
+    (100, 44, 2),
+    (4, 45, 6),
+    (9, 45, 4),
+    (15, 46, 3),
+    (20, 46, 7),
+    (25, 47, 8),
+    (30, 47, 1),
+    (35, 48, 4),
+    (39, 48, 6),
+    (43, 49, 7),
+    (48, 49, 3),
+    (52, 50, 4),
+    (58, 50, 9);
 
 INSERT INTO
     Tienda_Empleado(IdTienda, IdEmpleado)
@@ -1433,7 +1290,44 @@ VALUES
     (3, 4),
     (5, 5),
     (3, 10),
-    (6, 17);
+    (6, 17),
+    (2, 15),
+    (7, 8),
+    (8, 12),
+    (10, 14),
+    (12, 16),
+    (13, 18),
+    (14, 19),
+    (15, 21),
+    (16, 22),
+    (17, 23),
+    (18, 24),
+    (19, 25),
+    (20, 26),
+    (1, 27),
+    (2, 28),
+    (3, 29),
+    (4, 30),
+    (5, 31),
+    (6, 32),
+    (7, 33),
+    (8, 34),
+    (9, 35),
+    (10, 36),
+    (11, 37),
+    (12, 38),
+    (13, 39),
+    (14, 40),
+    (15, 41),
+    (16, 42),
+    (17, 43),
+    (18, 44),
+    (19, 45),
+    (20, 46),
+    (1, 47),
+    (2, 48),
+    (3, 49),
+    (4, 50);
 
 INSERT INTO
     Producto_Tienda(
